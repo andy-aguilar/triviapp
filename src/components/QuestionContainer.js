@@ -9,6 +9,11 @@ export default class QuestionContainer extends React.Component {
         super();
         this.state= {
             currentQuestion: {
+                category: "",
+                correct_answer: "",
+                difficulty: "",
+                question: "",
+                type: "",
                 incorrect_answers: []
             }
         }
@@ -39,7 +44,7 @@ export default class QuestionContainer extends React.Component {
         return(
             <div className="question-container">
                 <Category category={this.state.currentQuestion.category}/>
-                <Question question={this.state.currentQuestion.question}/>
+                <Question question={this.state.currentQuestion.question}/><br></br>
                 <Answers correctAnswer={this.state.currentQuestion.correct_answer} allAnswers={this.makeArray()}/>
             </div>
         )
